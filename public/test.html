@@ -1,0 +1,10 @@
+<body onload="loadFile('./users/TakenUsers.txt')">
+    <br />
+    <p id="output">asdf</p>
+    <script>
+        async function loadFile(file) {
+            let text = await file.text();
+            document.getElementById("output").innerHTML = text;
+        }
+    </script>
+</body>

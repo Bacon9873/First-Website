@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scores</title>
+    <style>
+        table,
+        th,
+        td {
+            padding: 2px;
+            border: 3px solid #ddd;
+            width: 35%;
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        table.center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+         :root {
+            --navBarBorderColor: black;
+        }
+        
+        body {
+            margin: 0;
+            margin-top: 100px;
+            background-color: dimgrey;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+        
+        li {
+            border-right: 1px solid var(--navBarBorderColor);
+            border-bottom: 1px solid var(--navBarBorderColor);
+        }
+        
+        li:last-child {
+            float: right;
+            border-right: none;
+            border-left: 1px solid var(--navBarBorderColor);
+        }
+        
+        .active {
+            background-color: #a0a0a0;
+        }
+        
+        .title {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            text-align: center;
+            font-size: 36px;
+            color: white;
+        }
+        
+        .paraText {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+        }
+        
+        .redText {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .redText:hover {
+            color: red;
+        }
+    </style>
+    <script src="./findNames.js"></script>
+    <script type="text/javascript">
+        // boiler plate because for some reason you cant use node js client side
+        function loadFile(filePath) {
+            var result = null;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", filePath, false);
+            xmlhttp.send();
+            if (xmlhttp.status == 200) {
+                result = xmlhttp.responseText;
+            }
+            return result;
+        }
+        var usernames = loadFile("./users/TakenUsers.txt");
+        const usernamesList = findNames(usernames);
+        const showTable = function() {
+            const scoresTable = document.getElementById("scores");
+            // Actual inside table stuff
+            for (let i = 0; i < usernamesList.length; i++) {
+                var row = scoresTable.insertRow(i);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var score = loadFile(`./users/scores/${usernamesList[i]}.score.txt`);
+                console.log(score);
+                if (score == 6) {
+                    score = "Did not get it";
+                }
+                cell1.innerHTML = `<p class="paraText">${usernamesList[i]}</p>`;
+                cell2.innerHTML = `<p class="paraText">${score}</p>`;
+            }
+        };
+    </script>
+</head>
+
+<body onload="showTable()">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li class="active"><a href="/scores">Scores</a></li>
+        <li><a href="/addscore">Add your score</a></li>
+        <li style="float: right"><a href="/contact">Contact</a></li>
+    </ul>
+    <p class="title">Today's Scores</p>
+    <table class="center" id="scores">
+        <thead>
+            <div>
+                <p class="paraText">Username ------------------------- Score</p>
+            </div>
+        </thead>
+    </table>
+    <p class="redText" style="margin: 100px">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi cumque saepe consequatur optio architecto laudantium voluptate ipsum vero doloremque cum asperiores, impedit distinctio veritatis, id doloribus ipsa debitis alias facilis.
+    </p>
+</body>
+
+</html>

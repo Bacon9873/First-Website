@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<title>Home</title>
+
+<head>
+    <style>
+         :root {
+            --navBarBorderColor: black;
+        }
+        
+        body {
+            margin: 0;
+            margin-top: 100px;
+            background-color: dimgrey;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+        
+        li {
+            border-right: 1px solid var(--navBarBorderColor);
+            border-bottom: 1px solid var(--navBarBorderColor);
+        }
+        
+        li:last-child {
+            float: right;
+            border-right: none;
+            border-left: 1px solid var(--navBarBorderColor);
+        }
+        
+        .active {
+            background-color: #a0a0a0;
+        }
+        
+        .title {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            text-align: center;
+            font-size: 36px;
+            color: white;
+        }
+        
+        .paraText {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            margin: 100px;
+            color: white;
+            font-size: 18px;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="/scores">Scores</a></li>
+        <li><a href="/addscore">Add your score</a></li>
+        <li style="float: right"><a href="/contact">Contact</a></li>
+    </ul>
+    <p class="title">Welcome!</p>
+    <p class="paraText">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris venenatis arcu et augue dictum, quis auctor purus sagittis. Sed nec lorem ligula. Donec vulputate volutpat turpis ac cursus. Fusce non nisi ornare, malesuada odio ac, volutpat tellus. Cras
+        sit amet tincidunt magna. Vivamus arcu augue, eleifend eu varius non, commodo sit amet leo. Aenean at turpis id libero tristique molestie at in felis. Nullam quis tincidunt orci, et aliquet justo. In consectetur urna in erat condimentum sodales.
+        Duis ante neque, mollis eu venenatis sed, sagittis a orci. Suspendisse ullamcorper eget mi ut fringilla. Curabitur sodales felis risus, nec mollis nunc vulputate vel. In maximus leo in risus commodo ultrices. Praesent non volutpat leo. Vestibulum
+        porttitor turpis ac mattis condimentum. Nunc ac mollis massa, vitae eleifend ligula. Fusce enim metus, ornare et massa consectetur, hendrerit pharetra sapien. Nulla iaculis a augue id eleifend. Nulla enim arcu, sodales nec diam a, finibus gravida
+        magna.<br /><br />Nunc nec lectus quis sem pretium varius ac eu neque. Phasellus non rhoncus sem. Maecenas non pellentesque ex. Nunc vitae purus quis lorem euismod eleifend a in risus. Nam placerat ultrices tellus sed posuere. Proin neque
+        justo, ornare a eleifend ut, blandit nec sem. Cras quam purus, fermentum tincidunt tempor dictum, dapibus nec eros. Fusce elementum sollicitudin elit, et interdum massa. Nam et augue convallis, aliquet magna ut, posuere diam. Donec sed sem dignissim
+        purus porta placerat. Fusce dolor elit, accumsan vitae ullamcorper ut, finibus ut tortor. Suspendisse tellus lacus, maximus eu risus id, varius iaculis massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Phasellus non urna massa. Morbi venenatis tristique sem, eu feugiat magna pretium vel. Aenean vel sodales erat, non ultrices velit. Aenean mollis enim a suscipit elementum. Proin eu massa id lectus ornare fermentum. Aliquam neque odio, rutrum
+        a nulla ac, interdum efficitur metus. Nunc venenatis sem in mauris pellentesque aliquam. Sed mollis, quam vel porta tempus, ipsum ante commodo erat, vitae tristique lacus lacus vitae metus. Suspendisse molestie pretium purus. Curabitur facilisis
+        efficitur dui tempus ullamcorper. Integer ut erat commodo, finibus nunc quis, consequat sem. Curabitur pulvinar, nunc in gravida vulputate, ligula nisi porttitor dui, non vulputate ex ipsum in velit. Suspendisse condimentum ex nibh. Suspendisse
+        euismod urna eu tortor hendrerit sagittis. <br /><br />Nullam consequat augue quis augue iaculis, at lobortis dui finibus. Donec ultrices diam pharetra, interdum turpis eu, bibendum mi. Aenean porta scelerisque lectus, et efficitur augue egestas
+        eget. Aenean massa sem, ultrices eu venenatis quis, interdum quis risus. Aliquam erat volutpat. Mauris id erat interdum nulla faucibus maximus. Nam efficitur porta dolor, et aliquam elit elementum eget. Vivamus vestibulum bibendum ante, ut feugiat
+        massa. In hac habitasse platea dictumst. Nullam suscipit felis non nunc placerat lacinia. Quisque scelerisque rhoncus purus, non rutrum est hendrerit vel. Fusce ac arcu varius, vehicula orci et, ultricies tellus. Sed ultricies diam non varius
+        scelerisque. Morbi aliquam ante et lacus tempus blandit. Duis nec velit odio. Suspendisse tristique dignissim nulla, in fermentum lorem ultrices nec. Nullam dictum finibus justo, sit amet fermentum ipsum dignissim id. Proin venenatis, risus ac
+        luctus dapibus, ipsum lectus interdum leo, id ullamcorper dolor felis et eros. Donec egestas porttitor feugiat. Aliquam erat volutpat. Nulla pulvinar ligula non risus malesuada, pulvinar tristique purus ultricies. Mauris lobortis euismod sapien,
+        vitae vehicula neque tristique venenatis. Quisque id eleifend turpis. Duis efficitur sem a tincidunt viverra.
+    </p>
+</body>
+
+</html>

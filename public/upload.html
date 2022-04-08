@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Score has been uploaded</title>
+    <style>
+         :root {
+            --navBarBorderColor: black;
+        }
+        
+        body {
+            margin: 0;
+            margin-top: 100px;
+            background-color: dimgrey;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+        
+        li {
+            border-right: 1px solid var(--navBarBorderColor);
+            border-bottom: 1px solid var(--navBarBorderColor);
+        }
+        
+        li:last-child {
+            float: right;
+            border-right: none;
+            border-left: 1px solid var(--navBarBorderColor);
+        }
+        
+        .active {
+            background-color: #a0a0a0;
+        }
+        
+        .title {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            text-align: center;
+            font-size: 36px;
+            color: white;
+        }
+        
+        .paraText {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            margin: 10px;
+            color: white;
+            font-size: 18px;
+            text-align: justify;
+            bottom: auto;
+            margin-left: 100px;
+        }
+        
+        .paraTextNoMargin {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            margin: 10px;
+            color: white;
+            font-size: 18px;
+            text-align: justify;
+            bottom: auto;
+        }
+        
+        .button {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            bottom: auto;
+            background-color: #333;
+        }
+        
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/scores">Scores</a></li>
+        <li><a href="/addscore">Add your score</a></li>
+        <li style="float: right">
+            <a href="/contact">Contact</a>
+        </li>
+    </ul>
+    <p class="title">Your score has been uploaded</p>
+    <div class="center">
+        <a href="/scores">
+            <button class="button">See the scores</button>
+        </a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Your Score</title>
+    <style>
+         :root {
+            --navBarBorderColor: black;
+        }
+        
+        body {
+            margin: 0;
+            margin-top: 100px;
+            background-color: dimgrey;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+        
+        li {
+            border-right: 1px solid var(--navBarBorderColor);
+            border-bottom: 1px solid var(--navBarBorderColor);
+        }
+        
+        li:last-child {
+            float: right;
+            border-right: none;
+            border-left: 1px solid var(--navBarBorderColor);
+        }
+        
+        .active {
+            background-color: #a0a0a0;
+        }
+        
+        .title {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            text-align: center;
+            font-size: 36px;
+            color: white;
+        }
+        
+        .paraText {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            margin: 10px;
+            color: white;
+            font-size: 18px;
+            text-align: justify;
+            bottom: auto;
+            margin-left: 100px;
+        }
+        
+        .paraTextNoMargin {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            margin: 10px;
+            color: white;
+            font-size: 18px;
+            text-align: justify;
+            bottom: auto;
+        }
+        
+        .paraTextBackground {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            margin: 10px;
+            color: white;
+            font-size: 18px;
+            text-align: justify;
+            bottom: auto;
+            margin-left: 100px;
+            background-color: #333;
+        }
+        
+        input[type="range"] {
+            -webkit-appearance: none;
+            background: dimgray;
+            border-radius: 5px;
+            background-size: 70% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: rgb(65, 65, 65);
+            box-shadow: 0 0 2px 0 #555;
+            transition: background 0.3s ease-in-out;
+        }
+    </style>
+
+    <script>
+        const changeText = function() {
+            if (document.getElementById("score").value == 6) {
+                document.getElementById("scoreShower").innerHTML = "Did not get it";
+            } else {
+                document.getElementById("scoreShower").innerHTML =
+                    document.getElementById("score").value;
+            }
+        };
+        const checkIfValidUsername = function() {
+            const inputtedUsername = document.getElementById("username").value;
+            const usernameLengthMin = 4;
+            const usernameLengthMax = 20;
+            if (inputtedUsername.includes(",")) {
+                document.getElementById(
+                    "usernameChecker"
+                ).innerHTML = `The username you entered was invalid. Please check if: <br> - It includes commas<br> - It is less than ${usernameLengthMin} characters in length <br> - It is greater than ${usernameLengthMax} characters in length`;
+            } else if (inputtedUsername.length < usernameLengthMin) {
+                document.getElementById(
+                    "usernameChecker"
+                ).innerHTML = `The username you entered was invalid. Please check if: <br> - It includes commas<br> - It is less than ${usernameLengthMin} characters in length <br> - It is greater than ${usernameLengthMax} characters in length`;
+            } else if (inputtedUsername.length > usernameLengthMax) {
+                document.getElementById(
+                    "usernameChecker"
+                ).innerHTML = `The username you entered was invalid. Please check if: <br> - It includes commas<br> - It is less than ${usernameLengthMin} characters in length <br> - It is greater than ${usernameLengthMax} characters in length`;
+            } else if (inputtedUsername.includes(".")) {
+                document.getElementById(
+                    "usernameChecker"
+                ).innerHTML = `The username you entered was invalid. Please check if: <br> - It includes commas or periods<br> - It is less than ${usernameLengthMin} characters in length <br> - It is greater than ${usernameLengthMax} characters in length`;
+            } else {
+                document.getElementById("usernameChecker").innerHTML =
+                    "The username you entered is fine.";
+            }
+        };
+        const checkIfValidPassword = function() {
+            const inputtedPassword = document.getElementById("password").value;
+            const passwordLengthMin = 5;
+            const passwordLengthMax = 25;
+            if (inputtedPassword.includes(",")) {
+                document.getElementById(
+                    "passwordChecker"
+                ).innerHTML = `The password you entered was invalid. Please check if: <br> - It includes commas<br> - It is less than ${passwordLengthMin} characters in length <br> - It is greater than ${passwordLengthMax} characters in length`;
+            } else if (inputtedPassword.length < passwordLengthMin) {
+                document.getElementById(
+                    "passwordChecker"
+                ).innerHTML = `The password you entered was invalid. Please check if: <br> - It includes commas<br> - It is less than ${passwordLengthMin} characters in length <br> - It is greater than ${passwordLengthMax} characters in length`;
+            } else if (inputtedPassword.length > passwordLengthMax) {
+                document.getElementById(
+                    "passwordChecker"
+                ).innerHTML = `The password you entered was invalid. Please check if: <br> - It includes commas<br> - It is less than ${passwordLengthMin} characters in length <br> - It is greater than ${passwordLengthMax} characters in length`;
+            } else if (inputtedPassword.includes(".")) {
+                document.getElementById(
+                    "passwordChecker"
+                ).innerHTML = `The password you entered was invalid. Please check if: <br> - It includes commas or periods<br> - It is less than ${passwordLengthMin} characters in length <br> - It is greater than ${passwordLengthMax} characters in length`;
+            } else {
+                document.getElementById("passwordChecker").innerHTML =
+                    "The password you entered is fine.";
+                button.disabled = false;
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/scores">Scores</a></li>
+        <li class="active"><a href="/addscore">Add your score</a></li>
+        <li style="float: right"><a href="/contact">Contact</a></li>
+    </ul>
+    <p class="title">Add Your Score</p>
+    <p id="usernameChecker" class="paraText">Please enter a username.</p>
+    <form action="/upload" method="POST">
+        <label for="username" class="paraText">Username</label>
+        <input type="text" name="username" id="username" class="paraText" style="background-color: rgb(70, 70, 70)" oninput="checkIfValidUsername()" />
+        <br />
+        <p class="paraText" id="passwordChecker">Please enter a password.</p>
+        <label for="password" class="paraText">Password</label>
+        <input type="text" name="password" id="password" class="paraText" oninput="checkIfValidPassword()" style="background-color: rgb(70, 70, 70)" />
+        <br />
+        <p class="paraTextNoMargin" style="margin-left: 360px" id="scoreShower">
+            1
+        </p>
+        <label for="score" class="paraText">Your Score</label>
+        <input type="range" min="1" max="6" value="1" name="score" id="score" class="paraText" oninput="changeText()" style="background: gray" />
+        <br /><br />
+        <label for="image" class="paraText">Upload the screenshot of your wordle!</label
+      >
+      <br />
+      <input type="file" id="image" name="image" class="paraText" />
+      <br />
+      <button
+        type="submit"
+        onclick=""
+        class="paraText"
+        style="background-color: rgb(70, 70, 70)"
+        id="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </body>
+</html>
